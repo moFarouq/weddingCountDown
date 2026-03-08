@@ -19,9 +19,18 @@ body {
   min-height: 100vh;
   font-family: Georgia, "Times New Roman", serif;
   color: var(--text-main);
-  background:
-    linear-gradient(rgba(244, 238, 225, 0.78), rgba(237, 227, 209, 0.82)),
-    url("assets/invitation-theme.png") center / cover fixed no-repeat;
+  background: linear-gradient(160deg, var(--paper), var(--paper-soft));
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("assets/invitation-theme.png") center / cover no-repeat;
+  opacity: 0.28;
+  pointer-events: none;
+  z-index: -1;
 }
 
 .page {
@@ -61,21 +70,13 @@ body {
   margin: 0;
   color: var(--accent);
   font-weight: 500;
-  letter-spacing: 0.45rem;
-  text-transform: uppercase;
+  letter-spacing: 0.08rem;
 }
 
 h1 {
-  margin: 0.45rem 0 0.2rem;
+  margin: 0.45rem 0;
   font-size: clamp(1.7rem, 3vw, 2.4rem);
   letter-spacing: 0.08rem;
-  text-transform: uppercase;
-}
-
-.couple-names {
-  margin: 0.2rem 0 0.6rem;
-  font-size: clamp(1.35rem, 2.6vw, 1.8rem);
-  letter-spacing: 0.15rem;
   text-transform: uppercase;
 }
 
