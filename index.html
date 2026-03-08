@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wedding Countdown</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="countdown-card" aria-live="polite">
+        <p class="eyebrow">Our Special Day</p>
+        <h1>Wedding Countdown</h1>
+        <p class="date-text">April 3, 2026 at 5:30 PM (Cairo Time)</p>
+
+        <div class="countdown-grid">
+          <div class="time-box">
+            <span id="days" class="time-value">0</span>
+            <span class="time-label">Days</span>
+          </div>
+          <div class="time-box">
+            <span id="hours" class="time-value">0</span>
+            <span class="time-label">Hours</span>
+          </div>
+          <div class="time-box">
+            <span id="minutes" class="time-value">0</span>
+            <span class="time-label">Minutes</span>
+          </div>
+          <div class="time-box">
+            <span id="seconds" class="time-value">0</span>
+            <span class="time-label">Seconds</span>
+          </div>
+        </div>
+
+        <p id="status-message" class="status-message"></p>
+      </section>
+
+      <section class="future-content" aria-label="Future decorations">
+        <h2>Coming Soon</h2>
+        <p>Photos, celebration effects, and more will be added step by step.</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
