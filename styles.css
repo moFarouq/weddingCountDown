@@ -1,13 +1,13 @@
 :root {
   color-scheme: light;
-  --bg-top: #f6f3ff;
-  --bg-bottom: #ffeef3;
-  --card-bg: #ffffff;
-  --text-main: #2f2440;
-  --text-muted: #6c6280;
-  --accent: #a855f7;
-  --accent-soft: #f3e8ff;
-  --border: #eadcff;
+  --paper: #f4eee1;
+  --paper-soft: #ede3d1;
+  --card-bg: rgba(251, 247, 238, 0.95);
+  --text-main: #5d5248;
+  --text-muted: #83766a;
+  --accent: #6f6356;
+  --accent-soft: #e8decb;
+  --border: #d8c8b4;
 }
 
 * {
@@ -17,9 +17,11 @@
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Georgia, "Times New Roman", serif;
   color: var(--text-main);
-  background: linear-gradient(160deg, var(--bg-top), var(--bg-bottom));
+  background:
+    linear-gradient(rgba(244, 238, 225, 0.78), rgba(237, 227, 209, 0.82)),
+    url("assets/invitation-theme.png") center / cover fixed no-repeat;
 }
 
 .page {
@@ -34,26 +36,55 @@ body {
   width: min(720px, 100%);
   background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 2rem;
-  box-shadow: 0 8px 30px rgba(104, 69, 161, 0.12);
+  box-shadow: 0 12px 32px rgba(80, 64, 43, 0.2);
   text-align: center;
+  position: relative;
+}
+
+.countdown-card::before,
+.countdown-card::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border: 1px solid rgba(111, 99, 86, 0.35);
+  inset: 12px;
+}
+
+.countdown-card::after {
+  inset: 22px;
+  border-color: rgba(140, 123, 102, 0.2);
 }
 
 .eyebrow {
   margin: 0;
   color: var(--accent);
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: 0.45rem;
+  text-transform: uppercase;
 }
 
 h1 {
-  margin: 0.45rem 0;
+  margin: 0.45rem 0 0.2rem;
   font-size: clamp(1.7rem, 3vw, 2.4rem);
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+}
+
+.couple-names {
+  margin: 0.2rem 0 0.6rem;
+  font-size: clamp(1.35rem, 2.6vw, 1.8rem);
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
 }
 
 .date-text {
   margin: 0 0 1.6rem;
   color: var(--text-muted);
+  letter-spacing: 0.06rem;
+  text-transform: uppercase;
+  font-size: 0.95rem;
 }
 
 .countdown-grid {
@@ -64,7 +95,8 @@ h1 {
 
 .time-box {
   background: var(--accent-soft);
-  border-radius: 14px;
+  border: 1px solid rgba(111, 99, 86, 0.2);
+  border-radius: 8px;
   padding: 0.9rem 0.5rem;
 }
 
@@ -78,12 +110,15 @@ h1 {
 .time-label {
   color: var(--text-muted);
   font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
 }
 
 .status-message {
   margin: 1rem 0 0;
   min-height: 1.5rem;
   font-weight: 600;
+  color: var(--accent);
 }
 
 .future-content {
@@ -95,6 +130,8 @@ h1 {
 .future-content h2 {
   color: var(--text-main);
   margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
 
 @media (max-width: 640px) {
